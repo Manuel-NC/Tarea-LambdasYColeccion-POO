@@ -20,7 +20,7 @@ public class MetodosCadenas {
 
         ArrayList<String> palabrasMayusculas =  (ArrayList<String>) palabras.stream()
                 .map(n -> n.toUpperCase())
-                .collect(Collectors.toList());
+                .collect(Collectors.toCollection(ArrayList<String>::new));
 
         System.out.println("Palabras despues de ser modificadas: " + palabrasMayusculas);
     }
