@@ -3,9 +3,9 @@ import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class MetodosCadenas {
-    static ArrayList<String> palabras = new ArrayList<>();
 
     public static void metodoFiltroSelectivo(String letra, int longitud) {
+        ArrayList<String> palabras = new ArrayList<>();
         Collections.addAll(palabras,"Jose","Luis","Manuel","Jorge","Javier","Luisa","Pepe");
 
         System.out.println("Palabras antes de ser modificadas: " + palabras);
@@ -14,6 +14,7 @@ public class MetodosCadenas {
     }
 
     public static void metodoConversorMayusculas(){
+        ArrayList<String> palabras = new ArrayList<>();
         Collections.addAll(palabras,"Jose","Luis","Manuel","Jorge","Javier","Luisa","Pepe");
 
         System.out.println("Palabras antes de ser modificadas: " + palabras);

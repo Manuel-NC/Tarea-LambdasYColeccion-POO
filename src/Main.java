@@ -14,4 +14,9 @@ public static void main(String[] args) {
     MetodosCadenas.metodoConversorMayusculas();
 
     System.out.println("\n");
+
+    System.out.println("4. Cuadrados Unicos:");
+    MetodosNumeros.metodoCuadradosUnicos();
+
+    System.out.println("\n");
     }
