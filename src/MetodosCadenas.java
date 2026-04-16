@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class MetodosCadenas {
     static ArrayList<String> palabras = new ArrayList<>();
@@ -10,5 +11,17 @@ public class MetodosCadenas {
         System.out.println("Palabras antes de ser modificadas: " + palabras);
         palabras.removeIf(n -> n.toLowerCase().startsWith(letra) || n.length() < longitud);
         System.out.println("Palabras despues de ser modificadas: " + palabras);
+    }
+
+    public static void metodoConversorMayusculas(){
+        Collections.addAll(palabras,"Jose","Luis","Manuel","Jorge","Javier","Luisa","Pepe");
+
+        System.out.println("Palabras antes de ser modificadas: " + palabras);
+
+        ArrayList<String> palabrasMayusculas =  (ArrayList<String>) palabras.stream()
+                .map(n -> n.toUpperCase())
+                .collect(Collectors.toList());
+
+        System.out.println("Palabras despues de ser modificadas: " + palabrasMayusculas);
     }
 }
