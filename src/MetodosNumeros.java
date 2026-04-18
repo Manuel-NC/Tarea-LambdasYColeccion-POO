@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
@@ -20,4 +21,15 @@ public class MetodosNumeros {
 
         return numerosUnicos;
     }
+
+    public static void imprimirCatalogoConDescuento(HashMap<String, Double> inventario){
+        System.out.println("Catalogo con 10% de descuento:");
+
+        inventario.forEach((cadena, v) ->{ // Se recorre llave (producto) y valor (precio)
+                    double precioConDescuento = v * 0.90; // Se calcula el precio con el 10% menos
+                    System.out.println("Producto: " + cadena + " | Precio con descuento: $" + precioConDescuento); // Se imprime el resultado
+                }
+        );
+    }
+
 }

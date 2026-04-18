@@ -12,6 +12,7 @@ public class MetodosCadenas {
     public static ArrayList<String> conversorMayusculas(ArrayList<String> palabras){
 
         ArrayList<String> palabrasMayusculas =  (ArrayList<String>) palabras.stream() // Se convierte palabras a stream()
+                .filter(Objects::nonNull) // Evita que el metodo se rompa con valores nulos
                 .map(n -> n.toUpperCase()) // Se convierte cada palabra a mayusculas
                 .collect(Collectors.toCollection(ArrayList<String>::new)); // Se guarda en un nuevo ArrayList
 
@@ -29,16 +30,6 @@ public class MetodosCadenas {
                 ));
 
         return palabrasLongitud;
-    }
-
-    public static void imprimirCatalogoConDescuento(HashMap<String, Double> inventario){
-        System.out.println("Catalogo con 10% de descuento:");
-
-        inventario.forEach((cadena, v) ->{ // Se recorre llave (producto) y valor (precio)
-            double precioConDescuento = v * 0.90; // Se calcula el precio con el 10% menos
-                    System.out.println("Producto: " + cadena + " | Precio con descuento: $" + precioConDescuento); // Se imprime el resultado
-                }
-                );
     }
 
     public static HashMap<String, Integer> contadorFrecuencias(ArrayList<String> palabras){
@@ -77,4 +68,5 @@ public class MetodosCadenas {
     public static void limitarFrecuencias(HashMap<String, Integer> mapa, int n){
         mapa.replaceAll((palabra, frecuencia) -> frecuencia > n ? n : frecuencia); // Se fija el valor en n si la frecuencia es mayor al limite, si no, se conserva el valor
     }
+
 }

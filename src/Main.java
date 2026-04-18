@@ -1,98 +1,108 @@
 public static void main(String[] args) {
+    // 1. MULTIPLICADOR POR FACTOR
+    System.out.println("1. EL MULTIPLICADOR:");
+    System.out.println("1. multiplicadorPorFactor (in-place):");
+    ArrayList<Integer> nums1 = new ArrayList<>(Arrays.asList(1, 2, -3, 0, 5));
+    System.out.println("Antes: " + nums1);
+    MetodosNumeros.multiplicadorPorFactor(nums1, 10);
+    System.out.println("Despues (Factor 10): " + nums1);
+    System.out.println("---");
 
-    ArrayList<Integer> numeros = new ArrayList<>();
-    for (int i = 0 ; i < 5 ; i++) {
-        numeros.add(i);
-    }
+    // 2. FILTRO POR PRIMERA LETRA Y LONGITUD
+    System.out.println("2. EL FILTRO SELECTIVO :");
+    System.out.println("2. filtroPorPrimeraLetraYLongitud (in-place):");
+    ArrayList<String> palabras2 = new ArrayList<>(Arrays.asList("Amigo", "Avion", "Sol", "Luna", "A", "Cielo"));
+    System.out.println("Antes: " + palabras2);
+    MetodosCadenas.filtroPorPrimeraLetraYLongitud(palabras2, "a", 4);
+    System.out.println("Despues (Sin inicial 'a' y min 4 letras): " + palabras2);
+    System.out.println("---");
 
-    ArrayList<Integer> numerosParaCuadrados = new ArrayList<>();
-    Collections.addAll(numerosParaCuadrados,1,1,2,3,4,5,5,6,4,3,2,8,7,7,9,10);
+    // 3. CONVERSOR MAYUSCULAS
+    System.out.println("3. CONVERSOR DE MAYUSCULAS");
+    System.out.println("3. conversorMayusculas (Retorna nueva lista):");
+    // Caso extremo: incluye un nulo y una cadena vacia
+    ArrayList<String> palabras3 = new ArrayList<>(Arrays.asList("java", null, "pYtHon", ""));
+    System.out.println("Original: " + palabras3);
+    ArrayList<String> resultado3 = MetodosCadenas.conversorMayusculas(palabras3);
+    System.out.println("Nueva lista (Manejando nulos): " + resultado3);
+    System.out.println("---");
 
-    ArrayList<String> palabras = new ArrayList<>();
-    Collections.addAll(palabras,"Jose","Luis","Manuel","Jorge","Javier","Luisa","Pepe","Manuel");
+    // 4. ELEMENTOS PARES CUADRADOS UNICOS
+    System.out.println("4. CUADRADOS UNICOS");
+    System.out.println("4. elementosParesCuadradosUnicos (HashSet):");
+    ArrayList<Integer> nums4 = new ArrayList<>(Arrays.asList(2, -2, 3, 4, 2, 6, 8, 8));
+    System.out.println("Entrada (con negativos y duplicados): " + nums4);
+    HashSet<Integer> resultado4 = MetodosNumeros.elementosParesCuadradosUnicos(nums4);
+    System.out.println("Resultado (Pares al cuadrado unicos): " + resultado4);
+    System.out.println("---");
 
+    // 5. MAPA LONGITUDES
+    System.out.println("5. MAPA DE LONGITUDES");
+    System.out.println("5. mapaLongitudes (HashMap):");
+    ArrayList<String> nombres5 = new ArrayList<>(Arrays.asList("Ana", "Pedro", "Ana", "Marta"));
+    System.out.println("Lista con duplicados: " + nombres5);
+    HashMap<String, Integer> mapa5 = MetodosCadenas.mapaLongitudes(nombres5);
+    System.out.println("Resultado Mapa (Clave unica): " + mapa5);
+    System.out.println("---");
 
-    System.out.println("1. El Multiplicador:");
-    System.out.println("Numeros antes de ser cambiados: " + numeros);
-    MetodosNumeros.multiplicadorPorFactor(numeros,5);
-    System.out.println("Numeros despues de ser multiplicados: " + numeros);
+    // 6. IMPRIMIR CATALOGO CON DESCUENTO
+    System.out.println("6. MODIFICADOR DE INVENTARIO");
+    System.out.println("6. imprimirCatalogoConDescuento (Solo impresion):");
+    HashMap<String, Double> inventario6 = new HashMap<>();
+    inventario6.put("Laptop", 1000.5);
+    inventario6.put("Mouse", 50.3);
+    inventario6.put("Computadora", 5422.33);
+    inventario6.put("Refrigerador", 753.67);
+    System.out.println("Mapa original antes de imprimir:");
+    System.out.println(inventario6);
+    MetodosNumeros.imprimirCatalogoConDescuento(inventario6);
+    System.out.println("---");
 
-    System.out.println("\n");
+    // 7. CONTADOR FRECUENCIAS
+    System.out.println("7. CONTADOR DE FRECUENCIAS");
+    System.out.println("7. contadorFrecuencias (merge):");
+    ArrayList<String> lista7 = new ArrayList<>(Arrays.asList("sol", "luna", "sol", "estrella", "sol", "luna"));
+    System.out.println("Lista: " + lista7);
+    HashMap<String, Integer> frec7 = MetodosCadenas.contadorFrecuencias(lista7);
+    System.out.println("Resultado Frecuencias: " + frec7);
+    System.out.println("---");
 
-    System.out.println("2. El Filtro Selectivo:");
-    System.out.println("Palabras antes de ser modificadas: " + palabras);
-    MetodosCadenas.filtroPorPrimeraLetraYLongitud(palabras,"j", 5);
-    System.out.println("Palabras despues de ser filtradas: " + palabras);
+    // 8. ELIMINADOR PALABRAS MENORES A N
+    System.out.println("8. CLASIFICADOR DE PALABRAS");
+    System.out.println("8. eliminadorPalabrasMenoresAN (Filtra por n):");
+    HashMap<String, Integer> datos8 = new HashMap<>();
+    datos8.put("Java", 10);
+    datos8.put("C", 2);
+    datos8.put("Python", 15);
+    System.out.println("Mapa: " + datos8);
+    ArrayList<String> filtradas8 = MetodosCadenas.eliminadorPalabrasMenoresAN(datos8, 5);
+    System.out.println("Palabras con frecuencia >= 5: " + filtradas8);
+    System.out.println("---");
 
-    System.out.println("\n");
+    // 9. OBTENER PALABRAS UNICAS FILTRADAS
+    System.out.println("9. DEDUPLICACION DE PALABRAS");
+    System.out.println("9. obtenerPalabrasUnicasFiltradas (Deduplicacion):");
+    String frase9 = "Hola, hola; el mundo es verde, el mundo es grande.";
+    System.out.println("Frase: " + frase9);
+    HashSet<String> set9 = MetodosCadenas.obtenerPalabrasUnicasFiltradas(frase9, 3);
+    System.out.println("Unicas (>= 3 letras y sin signos): " + set9);
+    System.out.println("---");
 
-    System.out.println("3. Conversor de Mayusculas:");
-    System.out.println("Palabras antes de ser modificadas: " + palabras);
-    ArrayList<String> palabrasMayusculas = MetodosCadenas.conversorMayusculas(palabras);
-    System.out.println("Palabras despues de volverse mayusculas: " + palabrasMayusculas);
+    // 10. LIMITAR FRECUENCIAS
+    System.out.println("10. EL TOPE DE FRECUENCIAS");
+    System.out.println("10. limitarFrecuencias (in-place):");
+    HashMap<String, Integer> mapa10 = new HashMap<>();
+    mapa10.put("A", 100); mapa10.put("B", 5); mapa10.put("C", 50);
+    System.out.println("Antes: " + mapa10);
+    MetodosCadenas.limitarFrecuencias(mapa10, 20);
+    System.out.println("Despues (Tope de 20): " + mapa10);
+    System.out.println("---");
 
-    System.out.println("\n");
-
-    System.out.println("4. Cuadrados Unicos:");
-    System.out.println("Numeros antes de ser cambiados: " + numerosParaCuadrados);
-    HashSet<Integer> numerosCuadradosUnicos = MetodosNumeros.elementosParesCuadradosUnicos(numerosParaCuadrados);
-    System.out.println("Numeros despues de volverse cuadrados unicos: " + numerosCuadradosUnicos);
-
-    System.out.println("\n");
-
-    System.out.println("5. Mapa de Longitudes:");
-    System.out.println("Palabras antes de ser modificadas: " + palabras);
-    HashMap<String, Integer> palabrasLongitud = MetodosCadenas.mapaLongitudes(palabras);
-    System.out.println("Palabras despues de volverse HashMap con la palabra y su longitud: " + palabrasLongitud);
-
-    System.out.println("\n");
-
-    System.out.println("6. Modificador de Inventario:");
-    HashMap<String, Double> productos = new HashMap<>();
-    productos.put("Computadora", 5430.10);
-    productos.put("Celular", 2520.45);
-    productos.put("Refrigerador", 1869.402);
-
-    System.out.println("Productos sin descuento (antes del metodo):");
-    System.out.println(productos);
-    System.out.println("\n");
-    MetodosCadenas.imprimirCatalogoConDescuento(productos);
-
-    System.out.println("\n");
-
-    System.out.println("7. Contador de Frecuencuas");
-    System.out.println("Palabras antes de ser modificadas: " + palabras);
-    HashMap<String, Integer> mapaFrecuencias = MetodosCadenas.contadorFrecuencias(palabras);
-    System.out.println("Palabras despues de ser contadas: " + mapaFrecuencias);
-
-    System.out.println("\n");
-
-    System.out.println("8. Clasificador de Palabras:");
-    HashMap<String, Integer> clasificadorEj1 = new HashMap<>();
-    clasificadorEj1.put("Jose",5);
-    clasificadorEj1.put("Luis",2);
-    clasificadorEj1.put("Daniel",7);
-    clasificadorEj1.put("Dana",1);
-    clasificadorEj1.put("Pablo",4);
-    clasificadorEj1.put("Jorge",3);
-
-    System.out.println("Palabras antes de ser modificadas: " + clasificadorEj1);
-    ArrayList<String> palabrasClasificadas = MetodosCadenas.eliminadorPalabrasMenoresAN(clasificadorEj1, 4);
-    System.out.println("Palabras despues de ser clasificadas: " + palabrasClasificadas);
-
-    System.out.println("\n");
-
-    System.out.println("9. Deduplicacion de Palabras:");
-    String frase = "Hola, mucho gusto saludarlos! Espero que se encuentren bien y que saluden usando hola para saludar.";
-    System.out.println("Frase antes de ser modificada: " + frase);
-    HashSet<String> palabrasvalidas = MetodosCadenas.obtenerPalabrasUnicasFiltradas(frase,5);
-    System.out.println("Frase convertida en palabras no duplicadas, mayor o igual a 5 y en minuscula: " + palabrasvalidas);
-
-    System.out.println("\n");
-
-    System.out.println("10. El Tope de Frecuencias:");
-    System.out.println("Palabras y frecuencias antes de ser modificadas: " + clasificadorEj1);
-    MetodosCadenas.limitarFrecuencias(clasificadorEj1,4);
-    System.out.println("Palabras y frecuencias despues de ser limitadas con valor de 4: " + clasificadorEj1);
+    // Caso Extremo: Lista vacia
+    System.out.println("CASO EXTREMO: LISTA VACIA");
+    ArrayList<String> vacia = new ArrayList<>();
+    System.out.println("Lista (para confirmar que esta vacia: " + vacia);
+    System.out.println("CASO EXTREMO: (mapaLongitudes): " + MetodosCadenas.mapaLongitudes(vacia));
+    System.out.println("---");
 
     }
