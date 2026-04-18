@@ -51,7 +51,7 @@ public class MetodosCadenas {
         return mapaFrecuencias;
     }
 
-    public static ArrayList<String> clasificadorPalabras(HashMap<String, Integer> mapa, int minFrecuencia){
+    public static ArrayList<String> eliminadorPalabrasMenoresAN(HashMap<String, Integer> mapa, int minFrecuencia){
 
         ArrayList<String> listaClasificada = mapa.entrySet().stream() // Se convierte el mapa a stream() con llave + valor
                 .filter(entrada -> entrada.getValue() >= minFrecuencia) // Se filtra por el valor dado
@@ -61,7 +61,7 @@ public class MetodosCadenas {
         return listaClasificada;
     }
 
-    public static HashSet<String> deduplicacionPalabras(String frase, int n){
+    public static HashSet<String> obtenerPalabrasUnicasFiltradas(String frase, int n){
 
         String[] palabrasSeparadas = frase.split("[\\s,.;:!¡?¿]+"); //Se divide por espacios o signos de puntuacion y se filtran vacios
 
