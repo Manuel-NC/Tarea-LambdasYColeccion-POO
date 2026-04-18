@@ -8,7 +8,7 @@ public static void main(String[] args) {
     Collections.addAll(numeros,1,1,2,3,4,5,5,6,4,3,2,8,7,7,9,10);
 
     ArrayList<String> palabras = new ArrayList<>();
-    Collections.addAll(palabras,"Jose","Luis","Manuel","Jorge","Javier","Luisa","Pepe");
+    Collections.addAll(palabras,"Jose","Luis","Manuel","Jorge","Javier","Luisa","Pepe","Manuel");
 
 
     System.out.println("1. El Multiplicador:");
@@ -58,6 +58,11 @@ public static void main(String[] args) {
     MetodosCadenas.imprimirCatalogoConDescuento(productos);
 
     System.out.println("\n");
+
+    System.out.println("7. Contador de Frecuencuas");
+    System.out.println("Palabras antes de ser modificadas: " + palabras);
+    HashMap<String, Integer> mapaFrecuencias = MetodosCadenas.contadorFrecuencias(palabras);
+    System.out.println("Palabras despues de ser contadas: " + mapaFrecuencias);
 
 
     }

@@ -44,4 +44,14 @@ public class MetodosCadenas {
                 }
                 );
     }
+
+    public static HashMap<String, Integer> contadorFrecuencias(ArrayList<String> palabras){
+        HashMap<String, Integer> mapaFrecuencias = new HashMap<>();
+
+        for (String p : palabras){
+            mapaFrecuencias.merge(p,1,(valorViejo,valorNuevo) -> valorViejo + valorNuevo);
+        }
+
+        return mapaFrecuencias;
+    }
 }
