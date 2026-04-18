@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MetodosCadenas {
@@ -61,5 +59,18 @@ public class MetodosCadenas {
                 .collect(Collectors.toCollection(ArrayList::new)); //Se guarda en ArrayList
 
         return listaClasificada;
+    }
+
+    public static HashSet<String> deduplicacionPalabras(String frase, int n){
+
+        String[] palabrasSeparadas = frase.split("[\\s,.;:!¡?¿]+"); //Se divide por espacios o signos de puntuacion y se filtran vacios
+
+        HashSet<String> palabrasValidas = (HashSet<String>) Arrays.stream(palabrasSeparadas)
+                .filter(cadena -> !cadena.isEmpty()) // Se eliminan posibles cadenas vacias
+                .filter(cadena -> cadena.length() >= n) // Se filtran palabras con longitud minima n
+                .map(cadena -> cadena.toLowerCase()) // Se convierten todas a minusculas
+                .collect(Collectors.toSet()); // Se guardan en un Set para eliminar duplicados
+
+        return palabrasValidas;
     }
 }

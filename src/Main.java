@@ -82,4 +82,12 @@ public static void main(String[] args) {
 
     System.out.println("\n");
 
+    System.out.println("9. Deduplicacion de Palabras:");
+    String frase = "Hola, mucho gusto saludarlos! Espero que se encuentren bien y que saluden usando hola para saludar.";
+    System.out.println("Frase antes de ser modificada: " + frase);
+    HashSet<String> palabrasvalidas = MetodosCadenas.deduplicacionPalabras(frase,5);
+    System.out.println("Frase convertida en palabras no duplicadas, mayor o igual a 5 y en minuscula: " + palabrasvalidas);
+
+    System.out.println("\n");
+
     }
