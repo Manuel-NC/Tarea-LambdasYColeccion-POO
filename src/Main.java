@@ -90,4 +90,9 @@ public static void main(String[] args) {
 
     System.out.println("\n");
 
+    System.out.println("10. El Tope de Frecuencias:");
+    System.out.println("Palabras y frecuencias antes de ser modificadas: " + clasificadorEj1);
+    MetodosCadenas.limitarFrecuencias(clasificadorEj1,4);
+    System.out.println("Palabras y frecuencias despues de ser limitadas con valor de 4: " + clasificadorEj1);
+
     }

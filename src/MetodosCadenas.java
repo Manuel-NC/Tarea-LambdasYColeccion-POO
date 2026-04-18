@@ -73,4 +73,8 @@ public class MetodosCadenas {
 
         return palabrasValidas;
     }
+
+    public static void limitarFrecuencias(HashMap<String, Integer> mapa, int n){
+        mapa.replaceAll((palabra, frecuencia) -> frecuencia > n ? n : frecuencia); // Se fija el valor en n si la frecuencia es mayor al limite, si no, se conserva el valor
+    }
 }
