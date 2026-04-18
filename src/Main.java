@@ -14,7 +14,7 @@ public static void main(String[] args) {
 
     System.out.println("1. El Multiplicador:");
     System.out.println("Numeros antes de ser cambiados: " + numeros);
-    MetodosNumeros.multiplicador(numeros,5);
+    MetodosNumeros.multiplicadorPorFactor(numeros,5);
     System.out.println("Numeros despues de ser multiplicados: " + numeros);
 
     System.out.println("\n");
@@ -35,7 +35,7 @@ public static void main(String[] args) {
 
     System.out.println("4. Cuadrados Unicos:");
     System.out.println("Numeros antes de ser cambiados: " + numerosParaCuadrados);
-    HashSet<Integer> numerosCuadradosUnicos = MetodosNumeros.cuadradosUnicos(numerosParaCuadrados);
+    HashSet<Integer> numerosCuadradosUnicos = MetodosNumeros.elementosParesCuadradosUnicos(numerosParaCuadrados);
     System.out.println("Numeros despues de volverse cuadrados unicos: " + numerosCuadradosUnicos);
 
     System.out.println("\n");
@@ -77,7 +77,7 @@ public static void main(String[] args) {
     clasificadorEj1.put("Jorge",3);
 
     System.out.println("Palabras antes de ser modificadas: " + clasificadorEj1);
-    ArrayList<String> palabrasClasificadas = MetodosCadenas.clasificadorPalabras(clasificadorEj1, 4);
+    ArrayList<String> palabrasClasificadas = MetodosCadenas.eliminadorPalabrasMenoresAN(clasificadorEj1, 4);
     System.out.println("Palabras despues de ser clasificadas: " + palabrasClasificadas);
 
     System.out.println("\n");
@@ -85,7 +85,7 @@ public static void main(String[] args) {
     System.out.println("9. Deduplicacion de Palabras:");
     String frase = "Hola, mucho gusto saludarlos! Espero que se encuentren bien y que saluden usando hola para saludar.";
     System.out.println("Frase antes de ser modificada: " + frase);
-    HashSet<String> palabrasvalidas = MetodosCadenas.deduplicacionPalabras(frase,5);
+    HashSet<String> palabrasvalidas = MetodosCadenas.obtenerPalabrasUnicasFiltradas(frase,5);
     System.out.println("Frase convertida en palabras no duplicadas, mayor o igual a 5 y en minuscula: " + palabrasvalidas);
 
     System.out.println("\n");
