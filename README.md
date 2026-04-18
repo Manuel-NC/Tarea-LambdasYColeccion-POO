@@ -20,21 +20,24 @@ Esta tarea consiste en la creacion de 10 metodos estaticos, los cuales se encuen
 10. **limitarFrecuencias**: Establece un tope maximo para los valores de un mapa de frecuencias usando `replaceAll` (Modificacion in-place).
 
 ## Compilacion
-1. Primero, descarga el proyecto como un archivo ZIP y descomprimelo, o usa el siguiente comando en tu terminal:
+1. Descarga una copia de los archivos a tu equipo local:
    ```
-   git clone https://github.com/TU_USUARIO/NOMBRE_DE_TU_REPO.git
+   git clone https://github.com/Manuel-NC/Tarea-LambdasYColeccion-POO.git
+   cd Tarea-LambdasYColeccion-POO
    ```
-3. Entra a la carpeta donde se guardaron los archivos (debes ver archivos como Main.java, MetodosCadenas.java, etc.).
-4. Ejecuta este comando para que Java prepare todos los archivos al mismo tiempo:
+   
+2. Genera los archivos ejecutables .class a partir del codigo fuente:
    ```
    javac *.java
    ```
    
 ## Ejecucion
-4. Ahora, corre la clase principal para ver los resultados de los 10 metodos en tu pantalla:
+3. Corre la clase principal para mostrar los resultados de los 10 metodos:
    ```
    java Main
    ```
+
+Nota: Se requiere tener instalado el JDK 8 o superior. Tambien puedes abrir la carpeta directamente en un IDE (como IntelliJ) y ejecutar el archivo Main.java.
 
 ## Ejemplo de salida
 Al ejecutar el programa, se visualizara un ejemplo de cada metodo:
