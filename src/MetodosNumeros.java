@@ -5,20 +5,18 @@ import java.util.stream.Collectors;
 
 public class MetodosNumeros {
 
-    public static ArrayList<Integer> multiplicador(ArrayList<Integer> numeros, int factor) {
-        ArrayList<Integer> numerosMultiplicados = new ArrayList<>(numeros);
+    public static void multiplicador(ArrayList<Integer> numeros, int factor) {
 
-        numerosMultiplicados.replaceAll(n -> n * factor);
+        numeros.replaceAll(n -> n * factor); // Se reemplaza cada numero multiplicandolo por el factor
 
-        return numerosMultiplicados;
     }
 
     public static HashSet<Integer> cuadradosUnicos(ArrayList<Integer> numeros){
 
         HashSet<Integer> numerosUnicos = (HashSet<Integer>) numeros.stream()
-                .filter(n -> n%2 == 0)
-                .map(n -> n*n)
-                .collect(Collectors.toSet());
+                .filter(n -> n%2 == 0) // Se filtran solo los numeros pares
+                .map(n -> n*n) // Se eleva cada numero al cuadrado
+                .collect(Collectors.toSet()); // Se guarda en un Set para evitar duplicados
 
         return numerosUnicos;
     }
