@@ -20,7 +20,7 @@ public static void main(String[] args) {
 
     System.out.println("2. El Filtro Selectivo:");
     System.out.println("Palabras antes de ser modificadas: " + palabras);
-    ArrayList<String> palabrasFiltro = MetodosCadenas.filtroSelectivo(palabras,"j", 5);
+    ArrayList<String> palabrasFiltro = MetodosCadenas.filtroPorPrimeraLetraYLongitud(palabras,"j", 5);
     System.out.println("Palabras despues de ser filtradas: " + palabrasFiltro);
 
     System.out.println("\n");
@@ -43,6 +43,19 @@ public static void main(String[] args) {
     System.out.println("Palabras antes de ser modificadas: " + palabras);
     HashMap<String, Integer> palabrasLongitud = MetodosCadenas.mapaLongitudes(palabras);
     System.out.println("Palabras despues de volverse HashMap con la palabra y su longitud: " + palabrasLongitud);
+
+    System.out.println("\n");
+
+    System.out.println("6. Modificador de Inventario:");
+    HashMap<String, Double> productos = new HashMap<>();
+    productos.put("Computadora", 5430.10);
+    productos.put("Celular", 2520.45);
+    productos.put("Refrigerador", 1869.402);
+
+    System.out.println("Productos sin descuento (antes del metodo):");
+    System.out.println(productos);
+    System.out.println("\n");
+    MetodosCadenas.imprimirCatalogoConDescuento(productos);
 
     System.out.println("\n");
 

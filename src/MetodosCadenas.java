@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class MetodosCadenas {
 
-    public static ArrayList<String> filtroSelectivo(ArrayList<String> palabras, String letra, int longitud) {
+    public static ArrayList<String> filtroPorPrimeraLetraYLongitud(ArrayList<String> palabras, String letra, int longitud) {
         ArrayList<String> palabrasFiltradas = new ArrayList<>(palabras);
 
         palabrasFiltradas.removeIf(cadena -> cadena.toLowerCase().startsWith(letra) || cadena.length() < longitud);
@@ -33,5 +33,15 @@ public class MetodosCadenas {
                 ));
 
         return palabrasLongitud;
+    }
+
+    public static void imprimirCatalogoConDescuento(HashMap<String, Double> inventario){
+        System.out.println("Catalogo con 10% de descuento:");
+
+        inventario.forEach((cadena, v) ->{
+            double precioConDescuento = v * 0.90;
+                    System.out.println("Producto: " + cadena + " | Precio con descuento: $" + precioConDescuento);
+                }
+                );
     }
 }
