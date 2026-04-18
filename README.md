@@ -23,10 +23,16 @@ Esta tarea consiste en la creacion de 10 metodos estaticos, los cuales se encuen
 1. Descarga una copia de los archivos a tu equipo local:
    ```
    git clone https://github.com/Manuel-NC/Tarea-LambdasYColeccion-POO.git
+   cd Tarea-LambdasYColeccion-POO/src
+
+   ```
+   o
+   ```
    cd Tarea-LambdasYColeccion-POO
+   cd src
    ```
    
-2. Genera los archivos ejecutables .class a partir del codigo fuente:
+3. Genera los archivos ejecutables .class a partir del codigo fuente:
    ```
    javac *.java
    ```
